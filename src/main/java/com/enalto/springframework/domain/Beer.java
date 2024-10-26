@@ -1,12 +1,16 @@
 package com.enalto.springframework.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 
@@ -27,13 +31,12 @@ public class Beer {
     @Version
     private Long version;
 
-  //  @CreationTimestamp
-    @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    //@Temporal(TemporalType.TIMESTAMP)
     private Timestamp createdDate;
 
-  //  @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
+    //@Temporal(TemporalType.TIMESTAMP)
     private Timestamp lastUpdatedDate;
 
     private String beerName;
