@@ -28,7 +28,7 @@ class BeerControllerTest {
     private static BeerDto validBeerDto;
 
     @BeforeAll
-    static void init() {
+    static void startinit() {
         validBeerDto = BeerDto.builder()
                 .beerName("My Beer")
                 .beerStyleEnum(BeerStyleEnum.ALE)
